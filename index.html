@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Chinmay 💗</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    color: #63213e;
+    background: linear-gradient(145deg, #ffd9eb, #ffb9d8, #ffe6f0);
+    overflow-x: hidden;
+}
+
+#app {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 15px;
+}
+
+.page {
+    width: 100%;
+    max-width: 440px;
+    min-height: 650px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    border: 3px solid #fff0f7;
+    border-radius: 30px;
+    padding: 35px 22px;
+    background: rgba(255, 244, 249, 0.91);
+    box-shadow: 0 15px 45px rgba(153, 40, 91, 0.20);
+    animation: appear 0.55s ease;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(15px) scale(.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(36px, 10vw, 49px);
+    line-height: 1.2;
+    margin: 12px 0;
+    color: #a31652;
+}
+
+h2 {
+    font-size: 23px;
+    margin-top: 20px;
+}
+
+p {
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.small {
+    font-size: 13px;
+    opacity: .8;
+}
+
+.emoji {
+    font-size: 75px;
+    margin: 15px 0;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0) rotate(-3deg); }
+    50% { transform: translateY(-10px) rotate(3deg); }
+}
+
+button {
+    font-family: inherit;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 14px 23px;
+    border-radius: 16px;
+    margin: 7px;
+    transition: transform .2s, box-shadow .2s;
+}
+
+button:active {
+    transform: scale(.94);
+}
+
+.primary {
+    background: linear-gradient(135deg, #e90059, #ad084a);
+    color: white;
+    box-shadow: 0 6px 15px #eaa0c0;
+}
+
+.secondary {
+    background: white;
+    color: #a31652;
+    border: 2px solid #f2a7c9;
+}
+
+.btn-wide {
+    width: 90%;
+    max-width: 300px;
+}
+
+.bear {
+    font-size: 66px;
+    display: inline-block;
+    animation: bounce 2.4s infinite;
+}
+
+.buttons {
+    position: relative;
+    min-height: 110px;
+    margin-top: 20px;
+}
+
+#noBtn {
+    position: relative;
+}
+
+.progress {
+    position: absolute;
+    top: 13px;
+    right: 15px;
+    font-size: 12px;
+    background: white;
+    padding: 7px 11px;
+    border-radius: 20px;
+}
+
+.balloons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 25px auto;
+    max-width: 300px;
+}
+
+.balloon {
+    font-size: 80px;
+    background: transparent;
+    padding: 8px 0;
+    margin: 0;
+    filter: drop-shadow(0 5px 3px #e6a3c0);
+    animation: float 2.5s ease-in-out infinite;
+}
+
+.balloon:nth-child(even) {
+    animation-delay: .7s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+.balloon.popped {
+    animation: pop .3s forwards;
+    pointer-events: none;
+}
+
+@keyframes pop {
+    to { transform: scale(1.7); opacity: 0; }
+}
+
+#messageBox {
+    margin: 15px 0;
+    min-height: 55px;
+    padding: 12px;
+    border-radius: 15px;
+    background: #fff;
+    font-size: 14px;
+}
+
+.envelope {
+    font-size: 105px;
+    cursor: pointer;
+    display: inline-block;
+    animation: bounce 2s infinite;
+}
+
+.letter {
+    display: none;
+    text-align: left;
+    padding: 20px;
+    background: #fff;
+    border-radius: 15px;
+    border: 1px dashed #e68bb5;
+    margin-top: 15px;
+    white-space: pre-line;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.gift {
+    font-size: 115px;
+    cursor: pointer;
+    display: inline-block;
+    animation: bounce 1.6s infinite;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.final-heart {
+    font-size: 85px;
+    animation: heartbeat 1.2s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.16); }
+}
+
+.floaty {
+    position: fixed;
+    bottom: -30px;
+    pointer-events: none;
+    animation: rise linear forwards;
+    z-index: 10;
+}
+
+@keyframes rise {
+    to { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+}
+
+.footer {
+    margin-top: 25px;
+    font-size: 11px;
+    opacity: .7;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="app"></div>
+
+<script>
+const app = document.getElementById('app');
+let currentPage = 1;
+let popped = 0;
+let giftOpened = false;
+
+const balloonMessages = [
+    "You make my ordinary days special. 💗",
+    "Your smile is one of my favourite things. 🥹",
+    "Distance can't erase what you mean to me. 💌",
+    "You are my favourite person to tease! 😂💕"
+];
+
+function confetti() {
+    const symbols = ['💗','💕','✨','🌸','💖','🎀'];
+    for (let i = 0; i < 18; i++) {
+        const el = document.createElement('div');
+        el.className = 'floaty';
+        el.textContent = symbols[Math.floor(Math.random()*symbols.length)];
+        el.style.left = Math.random()*100 + 'vw';
+        el.style.animationDuration = (3 + Math.random()*4) + 's';
+        el.style.fontSize = (16 + Math.random()*18) + 'px';
+        document.body.appendChild(el);
+        setTimeout(() => el.remove(), 7500);
+    }
+}
+
+function frame(content) {
+    app.innerHTML = `<main class="page">${content}</main>`;
+    window.scrollTo({top: 0, behavior: 'smooth'});
+    confetti();
+}
+
+function go(page) {
+    currentPage = page;
+    if (page === 1) welcome();
+    if (page === 2) balloonsPage();
+    if (page === 3) letterPage();
+    if (page === 4) giftPage();
+    if (page === 5) finalPage();
+}
+
+/* PAGE 1 — BIRTHDAY WELCOME */
+
+function welcome() {
+    frame(`
+        <div class="small">A little surprise made with love 🎀</div>
+        <div class="emoji">🎂</div>
+        <h1>Happy Birthday,<br>Chinmay Bubu!</h1>
+
+        <div class="bear">🐻 💗 🐼</div>
+
+        <h2>Are you ready for your surprise?</h2>
+        <p>
+            Somebody has planned something for you...
+            and that somebody loves annoying you. 😂
+        </p>
+
+        <div class="buttons">
+            <button class="primary" onclick="go(2)">YES! 😍</button>
+            <button class="secondary" id="noBtn" onclick="runAway()">NO 🙄</button>
+        </div>
+
+        <p class="small">Hint: the YES button is the correct answer. 🤭</p>
+        <div class="footer">Made especially for my Chinmay 💗</div>
+    `);
+}
+
+function runAway() {
+    const btn = document.getElementById('noBtn');
+    btn.style.position = 'fixed';
+    btn.style.left = Math.max(10, Math.random()*(window.innerWidth-110)) + 'px';
+    btn.style.top = Math.max(80, Math.random()*(window.innerHeight-100)) + 'px';
+    btn.textContent = 'CATCH ME 😂';
+}
+
+/* PAGE 2 — POP BALLOONS */
+
+function balloonsPage() {
+    popped = 0;
+
+    frame(`
+        <div class="progress" id="progress">0 / 4 POPPED</div>
+        <div class="emoji">🎈</div>
+        <h2>Pop all 4 balloons!</h2>
+        <p>Every balloon has a little message from me. 💌</p>
+
+        <div class="balloons">
+            <button class="balloon" onclick="popBalloon(this,0)">🎈</button>
+            <button class="balloon" onclick="popBalloon(this,1)">🎈</button>
+            <button class="balloon" onclick="popBalloon(this,2)">🎈</button>
+            <button class="balloon" onclick="popBalloon(this,3)">🎈</button>
+        </div>
+
+        <div id="messageBox">Tap a balloon, birthday boy! 🥳</div>
+
+        <button id="balloonNext" class="primary btn-wide hidden"
+            onclick="go(3)">UNLOCK YOUR LETTER 💌</button>
+
+        <div class="footer">Keep popping, bubu! 🎀</div>
+    `);
+}
+
+function popBalloon(btn, index) {
+    if (btn.classList.contains('popped')) return;
+
+    btn.classList.add('popped');
+    btn.textContent = '💥';
+    popped++;
+
+    document.getElementById('progress').textContent = popped + ' / 4 POPPED';
+    document.getElementById('messageBox').textContent = balloonMessages[index];
+
+    if (popped === 4) {
+        document.getElementById('messageBox').textContent =
+            'Yayyy! You popped them all! 🥹💗 Your next surprise is ready!';
+        document.getElementById('balloonNext').classList.remove('hidden');
+        confetti();
+    }
+}
+
+/* PAGE 3 — LOVE LETTER */
+
+function letterPage() {
+    frame(`
+        <div class="emoji">💌</div>
+        <h1>A little letter<br>for you</h1>
+
+        <p>Not every feeling fits into a text message...</p>
+        <div class="envelope" onclick="openLetter()">💌</div>
+        <p><b>Tap the envelope to open it!</b></p>
+
+        <div class="letter" id="letter">
+            Dear Chinmay, my bubu 💗,
+
+            Happy Birthday to the person who has a very special
+            place in my heart.
+
+            Three years of memories, laughter, silly fights,
+            teasing, missing each other, and finding our way
+            back to each other have given me so many moments
+            to treasure.
+
+            You are not just someone I love. You are someone
+            I want to keep making memories with.
+
+            I hope this new year of your life brings you
+            happiness, success, peace, and everything you
+            have been working for.
+
+            And remember... you are stuck with my teasing
+            for a VERY long time. 😂💗
+
+            Happy Birthday, my love.
+
+            Always cheering for you,
+            Your girl 🎀
+        </div>
+
+        <button class="primary btn-wide" onclick="go(4)">
+            NEXT SURPRISE 🎁
+        </button>
+    `);
+}
+
+function openLetter() {
+    document.getElementById('letter').style.display = 'block';
+    confetti();
+}
+
+/* PAGE 4 — MYSTERY GIFT */
+
+function giftPage() {
+    giftOpened = false;
+
+    frame(`
+        <div class="small">SPECIAL DELIVERY FOR CHINMAY 💌</div>
+        <h1>Your mystery gift!</h1>
+
+        <p>
+            Your birthday mission is almost complete.
+            But first, open your present!
+        </p>
+
+        <div class="gift" onclick="openGift()" id="gift">🎁</div>
+
+        <h2 id="giftHint">Tap the gift box! 👀</h2>
+
+        <div id="giftMessage" class="letter" style="text-align:center">
+            <div style="font-size:55px">💖</div>
+            SURPRISE, BUBU!
+
+            Your gift is a reminder that someone out there
+            is wishing you the happiest birthday and hoping
+            you always have reasons to smile.
+
+            You deserve all the good things life has to offer.
+            Never forget how special you are. 🎀
+        </div>
+
+        <button id="giftNext" class="primary btn-wide hidden"
+            onclick="go(5)">ONE LAST THING... 💗</button>
+    `);
+}
+
+function openGift() {
+    if (giftOpened) return;
+    giftOpened = true;
+
+    document.getElementById('gift').textContent = '🎉';
+    document.getElementById('giftHint').textContent = 'YOU UNLOCKED YOUR GIFT! 🥳';
+    document.getElementById('giftMessage').style.display = 'block';
+    document.getElementById('giftNext').classList.remove('hidden');
+
+    confetti();
+}
+
+/* PAGE 5 — FINAL SURPRISE */
+
+function finalPage() {
+    frame(`
+        <div class="final-heart">💗</div>
+
+        <h1>Happy Birthday,<br>My Chinmay!</h1>
+
+        <div class="bear">🐻 🎂 🐼</div>
+
+        <p>
+            Out of all the people in this world,
+            I'm so glad our paths crossed.
+        </p>
+
+        <p>
+            <b>15 May 2023</b><br>
+            A day that became part of our story. ✨
+        </p>
+
+        <p>
+            More laughter, more adventures,
+            more memories, more birthdays...
+            and more reasons to tease you every day. 😂
+        </p>
+
+        <h2>One last question, birthday boy! 👀</h2>
+        <p>Will you let me annoy you forever? 🤭</p>
+
+        <button class="primary btn-wide" onclick="forever()">
+            YES, YOU SILLY GIRL! 😂💗
+        </button>
+
+        <div id="foreverMessage"></div>
+
+        <button class="secondary btn-wide" onclick="go(1)">
+            REPLAY YOUR SURPRISE 🔄
+        </button>
+
+        <div class="footer">
+            Created with love, just for Chinmay. 🎀
+        </div>
+    `);
+}
+
+function forever() {
+    document.getElementById('foreverMessage').innerHTML = `
+        <h1 style="font-size:37px">YAYYYY! 🥹💗</h1>
+        <p>
+            Sorry bubu, no returns and no exchanges! 😂
+            You are officially stuck with me!
+        </p>
+        <div class="emoji">🧸💕🧸</div>
+        <p>Happy Birthday, my favourite human. 🎂</p>
+    `;
+    confetti();
+}
+
+welcome();
+</script>
+
+</body>
+  </html>
